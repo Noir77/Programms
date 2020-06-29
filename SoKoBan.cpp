@@ -145,7 +145,7 @@ int main() {
 	init_pair(10, COLOR_WHITE, COLOR_BLACK);
 	init_pair(11, COLOR_RED, COLOR_RED);
 	init_pair(12, COLOR_BLACK, COLOR_BLACK);
-	attron(COLOR_PAIR(1));
+	attron(COLOR_PAIR(12));
 
 	int X = 0, Y = 0, Dir;
 
@@ -154,7 +154,7 @@ int main() {
 	int Boxes = 0;
 	Point* Box = NULL;
 	int Flag = 0;
-	
+	noecho();
 	int LevelChoise;
 	scanw("%i", &LevelChoise);
 	if (LevelChoise == 1) {
@@ -207,7 +207,7 @@ int main() {
 
 	Draw(Loader, Box, X, Y, Boxes, Flag, count);refresh();
 	while (count > 0) {
-	  move(1,0);
+	  move(0,0);
 		key = getch();
 		if (key == 'r') {
 			if (LevelChoise == 1) {
@@ -258,6 +258,7 @@ int main() {
 		}
 		Dir = Direction(key);
 		Move_or_Push(Dir, Loader, Box, Boxes);
+		printw("\n");
 		Draw(Loader, Box, X, Y, Boxes,Flag, count);
 		refresh();
 	}
