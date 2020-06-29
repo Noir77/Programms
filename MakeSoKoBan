@@ -1,1 +1,1 @@
-SoKoBan:gcc sokoban.c -lncurses -o sokoban.o -fpermissive -lstdc++
+SoKoBan:g++ sokoban.c -lncurses -o sokoban.o -fpermissive -lstdc++
